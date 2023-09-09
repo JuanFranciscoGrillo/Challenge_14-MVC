@@ -1,0 +1,23 @@
+{
+  "name": "challenge_14-mvc",
+  "version": "1.0.0",
+  "description": "The Tech Blog is a website that allows tech enthusiasts and developers to create, edit, and share blog posts related to technology. Users can register, log in, and comment on posts, fostering a community of tech enthusiasts. The site features a user-friendly interface and is accessible on both desktop and mobile devices.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "connect-session-sequelize": "^7.1.7",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-handlebars": "^7.1.2",
+    "express-session": "^1.17.3",
+    "mysql2": "^3.6.1",
+    "sequelize": "^6.33.0",
+    "sequelize-cli": "^6.6.1"
+  }
+}
