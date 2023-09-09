@@ -1,0 +1,37 @@
+-- Create the database if it doesn't exist or use it if it exists
+CREATE DATABASE Techblog_db;
+
+-- Switch to the new database
+USE Techblog_db;
+
+-- Create a table for users
+CREATE TABLE IF NOT EXISTS users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(50) NOT NULL UNIQUE,
+  password VARCHAR(255) NOT NULL,
+  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+-- Create a table for blog posts
+CREATE TABLE IF NOT EXISTS blogposts (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(50) NOT NULL,
+  content TEXT NOT NULL,
+  user_id INT NOT NULL,
+  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+-- Create a table for comments
+CREATE TABLE IF NOT EXISTS comments (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  text TEXT NOT NULL,
+  user_id INT NOT NULL,
+  post_id INT NOT NULL,
+  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+  FOREIGN KEY (post_id) REFERENCES blogposts(id) ON DELETE CASCADE
+);
