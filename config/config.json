@@ -2,21 +2,21 @@
   "development": {
     "username": "root",
     "password": "hello",
-    "database": "database_development",
+    "database": "Techblog_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
     "password": "hello",
-    "database": "database_test",
+    "database": "Techblog_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
     "password": "hello",
-    "database": "database_production",
+    "database": "Techblog_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   }
